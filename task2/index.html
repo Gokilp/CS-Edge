@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Maker</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include rich text editor library CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Resume</h1>
+        
+        <!-- Form to collect user data -->
+        <form id="resumeForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="summary">Professional Summary:</label>
+            <textarea id="summary" name="summary" rows="4"></textarea>
+            
+            <!-- Rich text editor for detailed entries -->
+            <label for="experience">Experience:</label>
+            <div id="experienceEditor" class="rich-text-editor"></div>
+            
+            <!-- More sections for skills, education, projects, etc. -->
+            
+            <button type="submit">Generate Resume</button>
+        </form>
+        
+        <!-- Live preview of the resume -->
+        <div id="previewContainer">
+            <h2>Live Preview</h2>
+            <div id="resumePreview" class="resume-preview"></div>
+            <div id="formatOptions">
+                <label for="format">Choose Format:</label>
+                <select id="format">
+                    <option value="pdf">PDF</option>
+                    <option value="docx">DOCX</option>
+                    <option value="txt">TXT</option>
+                </select>
+                <button id="downloadBtn">Download</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Quill rich text editor library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- Include JavaScript file for functionality -->
+    <script src="script.js"></script>
+</body>
+</html>
